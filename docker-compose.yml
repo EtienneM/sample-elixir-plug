@@ -1,0 +1,12 @@
+version: '3'
+services:
+  sample-elixir-plug:
+    image: elixir:1.6
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - .:/app
+    environment:
+      PORT: 3000
+    command: sh -c "mix local.hex --force && mix compile && mix run --no-halt"

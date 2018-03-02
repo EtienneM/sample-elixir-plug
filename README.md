@@ -1,66 +1,61 @@
-Sample Elixir Plug application
-======================================
+# Sample Elixir Plug application
 
-Running Locally
----------------
-
-First, you need to have a working Elixir environment:
-
-http://elixir-lang.org/install.html
-
-You must specify the listening port using the `PORT` environment variable
+## Running Locally
 
 ### Install dependencies
+
 ```bash
-mix deps.get
+docker-compose run sample-elixir-plug mix deps.get
 ```
 
 ### Compile project
 
 ```bash
-mix compile
+docker-compose run sample-elixir-plug mix compile
 ```
 
 ### Execute
+
 ```bash
-PORT=4000 mix run --no-halt
+docker-compose up
 ```
 
-Deploying on Scalingo
----------------------
+## Deploying on Scalingo
 
 Create an application on https://scalingo.com, then:
 
 ```
 git remote add scalingo git@scalingo.com:<name_of_your_app>.git
 ```
-Set the `BUILDPACK_URL` environement variable to `https://github.com/HashNuke/heroku-buildpack-elixir.git`.
+
+Set the `BUILDPACK_URL` environment variable to `https://github.com/HashNuke/heroku-buildpack-elixir.git`.
 
 You can do it using the web dashboard, select your application, go to the `Environment` tab and add :
 ```
 BUILDPACK_URL=https://github.com/HashNuke/heroku-buildpack-elixir.git
 ```
 
-If you want to do it using the scalingo cli interface juste type :
+If you want to do it using the Scalingo CLI interface just type :
+
 ```sh
 scalingo -a <name_of_your_app> env-set BUILDPACK_URL=https://github.com/HashNuke/heroku-buildpack-elixir.git
 ```
 
-Next you'll need to push it to scalingo :
+Next you'll need to push it to Scalingo :
+
 ```sh
 git push scalingo master
 ```
 
 And that's it!
 
-The application is running at this url: http://sample-elixir-plug.scalingo.io
+The application is running at this URL: https://sample-elixir-plug.scalingo.io
 
-Deploy in one click
--------------------
+## Deploy in one click
 
 [![Deploy to Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy)
 
-Links
------
+## Links
+
 http://elixir-lang.org/
 https://github.com/elixir-lang/plug
