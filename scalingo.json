@@ -2,7 +2,7 @@
   "name": "Sample Elxir Plug app",
   "description": "Sample web application using the Elxir language and Plug framework",
   "logo": "https://scalingo.com/logo.svg",
-  "repository": "https://github.com/Scalingo/sample-crystal-web",
+  "repository": "https://github.com/Scalingo/sample-elixir-plug",
   "website": "https://scalingo.com",
   "env": {
     "BUILDPACK_URL": {
