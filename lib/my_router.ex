@@ -5,6 +5,8 @@ defmodule MyRouter do
   plug :dispatch
 
   match _ do
-    send_resp(conn, 200, File.read! "index.html")
+    conn
+    |> put_resp_content_type("text/html")
+    |> send_resp(200, File.read! "index.html")
   end
 end
